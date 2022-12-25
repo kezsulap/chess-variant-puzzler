@@ -201,6 +201,7 @@ def generate_puzzles(instream, outstream, engine, variant, depth, win_threshold,
             annotations['pv'] = ','.join(pv)
             ops = ';'.join('{} {}'.format(k, v) for k, v in annotations.items())
             outstream.write('{};{}\n'.format(fen, ops))
+            outstream.flush()
         elif failed_file:
             ff.write_file(epd)
 
